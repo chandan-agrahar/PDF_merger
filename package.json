@@ -5,7 +5,8 @@
   "main": "src/backend/index.js",
   "scripts": {
     "start": "node ./src/backend/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bc": "bun run --watch src/backend/index.ts"
   },
   "repository": {
     "type": "git",
@@ -17,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/rajeev-verma8527/PDF_merger/issues"
   },
-  "homepage": "https://github.com/rajeev-verma8527/PDF_merger#readme"
+  "homepage": "https://github.com/rajeev-verma8527/PDF_merger#readme",
+  "dependencies": {
+    "pdf-merger-js": "^5.1.2"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
 }
