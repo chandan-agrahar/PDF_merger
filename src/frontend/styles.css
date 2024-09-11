@@ -59,7 +59,7 @@ h2 i {
     background: white;
     border-radius: 12px 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 50px;
     margin-bottom: 20px;
 }
 
@@ -93,6 +93,19 @@ button:active {
     transform: translateY(0);
 }
 
+/*drag drop section*/
+
+#pdf-drag {
+    position: relative;
+    border: 2px dashed #333;
+    height: auto;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+
+}
+
 /* Progress Section */
 #progress-section, #result-section {
     background: white;
@@ -120,6 +133,7 @@ button:active {
     background-color: #007bff;
     width: 0;
     transition: width 0.4s ease;
+    padding: 2px;
 }
 
 #progress-text {

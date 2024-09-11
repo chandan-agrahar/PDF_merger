@@ -1,3 +1,5 @@
+
+
 document.getElementById('merge-button').addEventListener('click', function() {
     const files = document.getElementById('pdf-files').files;
     
@@ -9,28 +11,40 @@ document.getElementById('merge-button').addEventListener('click', function() {
     document.getElementById('upload-section').classList.add('hidden');
     document.getElementById('progress-section').classList.remove('hidden');
 
-    // Simulate file merging process
-    simulateFileMerge(files).then(mergedPdfUrl => {
+    mergeFiles(files).then(cha => {
         document.getElementById('progress-section').classList.add('hidden');
         document.getElementById('result-section').classList.remove('hidden');
-        document.getElementById('download-link').href = mergedPdfUrl;
+
+        console.log(cha.url)
+        window.open(cha.url)
+
+
+
+        // console.log(blob);
     });
 });
 
 
-// TO-DO : rewrite
-
-function simulateFileMerge(files) {
+function mergeFiles(files){
     return new Promise((resolve) => {
-        let progress = 0;
-        const interval = setInterval(() => {
-            progress += 10;
-            document.getElementById('progress-bar-fill').style.width = `${progress}%`;
 
-            if (progress >= 100) {
-                clearInterval(interval);
-                resolve('path/to/merged.pdf'); // Replace with actual file URL
-            }
-        }, 500);
-    });
+        const formData = new FormData()
+        
+        for(let i = 0; i< files.length; i++){
+            formData.append('pdfs',files[i])
+        }
+
+        request = new Request("/merge",{
+            method: 'POST',
+            body: formData
+        })
+
+        fetch(request).then(res=>{
+            
+            
+            resolve(res)
+        })
+            
+            
+    })
 }

@@ -17,5 +17,12 @@
   "bugs": {
     "url": "https://github.com/rajeev-verma8527/PDF_merger/issues"
   },
-  "homepage": "https://github.com/rajeev-verma8527/PDF_merger#readme"
+  "homepage": "https://github.com/rajeev-verma8527/PDF_merger#readme",
+  "dependencies": {
+    "express": "^4.20.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.4",
+    "pdf-merger-js": "^5.1.2",
+    "uniqid": "^5.4.0"
+  }
 }
